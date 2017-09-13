@@ -5,8 +5,8 @@ $(window).on('load', function() {
   var newImageURL = "./img/pictures/" + imageCount + ".jpg";
   var images = "";
 
-  while(doesExist(newImageURL) === true) {
-    images += '<li><img src="' + url + '" /></li>';
+  while(doesExist(newImageURL) === false) {
+    images += '<li><img src="img/pictures' + count + '.jpg" /></li>';
     imageCount++;
     console.log(newImageURL);
   }
