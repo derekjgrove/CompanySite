@@ -5,7 +5,7 @@ $(window).on('load', function() {
   var newImageURL = "./img/pictures/" + imageCount + ".jpg";
   var images = "";
 
-  while(doesExist(newImageURL) === false) {
+  while(doesExist(newImageURL) === true) {
     images += '<li><img src="img/pictures' + count + '.jpg" /></li>';
     imageCount++;
     console.log(newImageURL);
@@ -17,12 +17,10 @@ $(window).on('load', function() {
 
 
 function doesExist(url) {
-  $.get(url)
-    .done(function() {
-      console.log("true - " + url);
-      return true;
-    }).fail(function() {
-      console.log("false - " + url);
-      return false;
-    });
+
+  var http = new XMLHttpRequest();
+  http.open('HEAD', url, false);
+  http.send();
+
+  return http.status != 404;
 }
