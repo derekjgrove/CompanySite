@@ -18,8 +18,10 @@ $(window).on('load', function() {
 function doesExist(url) {
   $.get(url)
     .done(function() {
+      console.log("true - " + url);
       return true;
     }).fail(function() {
         return false;
+        console.log("false - " + url);
     });
 }
