@@ -11,7 +11,7 @@ $.ajax({
           console.log("HI   -   " + data);
           console.log(val);
             if( val.match(/\.(jpe?g|png|gif)$/) ) {
-                $("thumbContainer").append( "<li><img src='"+ folder + val +"'/></li>" );
+                $("#thumbContainer").append( "<li><img src='"+ folder + val +"'/></li>" );
             }
         });
     }
