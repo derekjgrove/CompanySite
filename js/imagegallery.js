@@ -14,7 +14,7 @@ $.ajax({
         });
     },
     complete: function() {
-      jQuery.getScript("/jquery.flexslider.js", function(data, status, jqxhr) {
+      jQuery.getScript("./js/jquery.flexslider.js", function(data, status, jqxhr) {
         $(function(){
           SyntaxHighlighter.all();
         });
