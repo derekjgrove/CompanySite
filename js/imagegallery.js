@@ -8,6 +8,7 @@ $(window).on('load', function() {
   while(doesExist(newImageURL) === true) {
     images += '<li><img src="' + url + '" /></li>';
     imageCount++;
+    console.log(newImageURL);
   }
 
   $("#thumbContainer").append(images);
@@ -21,7 +22,7 @@ function doesExist(url) {
       console.log("true - " + url);
       return true;
     }).fail(function() {
-        return false;
-        console.log("false - " + url);
+      console.log("false - " + url);
+      return false;
     });
 }
