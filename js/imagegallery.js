@@ -1,25 +1,14 @@
-var imageCount = 1;
 
-$(window).on('load', function() {
 
-  var newImageURL = "http://10.0.0.35/img/pictures/" + imageCount + ".jpg";
-  var images = "";
+var folder = "images/pictures/";
 
-  while(doesExist(newImageURL) == 200) {
-    images += '<li><img src="img/pictures' + count + '.jpg" /></li>';
-    imageCount++;
-    console.log(newImageURL);
-  }
-
-  $("#thumbContainer").append(images);
-
+$.ajax({
+    url : folder,
+    success: function (data) {
+        $(data).find("a").attr("href", function (i, val) {
+            if( val.match(/\.(jpe?g|png|gif)$/) ) {
+                $("thumbContainer").append( "<li><img src='"+ folder + val +"'/></li>" );
+            }
+        });
+    }
 });
-
-function doesExist(url) {
- var http = jQuery.ajax({
-    type:"HEAD",
-    url: url,
-    async: true
-  })
-  return http.status;
-}
