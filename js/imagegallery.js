@@ -5,7 +5,7 @@ $(window).on('load', function() {
   var newImageURL = "http://10.0.0.35/img/pictures/" + imageCount + ".jpg";
   var images = "";
 
-  while(doesExist(newImageURL) == true) {
+  while(doesExist(newImageURL) == 200) {
     images += '<li><img src="img/pictures' + count + '.jpg" /></li>';
     imageCount++;
     console.log(newImageURL);
@@ -21,6 +21,5 @@ function doesExist(url) {
     url: url,
     async: true
   })
-  console.log(http.status == 200);
-  return http.status == 200;
+  return http.status;
 }
