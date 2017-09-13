@@ -93,9 +93,10 @@
         <div class="container">
           <h1 class="page-header">Projects</h1>
         <div class="row" style="padding-bottom: 0px; margin-bottom: 0px;">
-          <div class="col-md-6 col-md-offset-3 col-sm-12">
+          <div class="col-md-7 col-md-offset-3 col-sm-12">
             <div id="slider" class="flexslider">
-              <ul class="slides">
+              <ul id="imagesContainer" class="slides">
+
                 <li>
     	    	        <img src="img/pictures/1.jpg" />
     	    		  </li>
@@ -195,7 +196,7 @@
                 <li>
                     <img src="img/pictures/33.jpg" />
                 </li>
-                <li>
+                <li id="34">
                     <img src="img/pictures/34.jpg" />
                 </li>
               </ul>
@@ -212,7 +213,8 @@
         <!-- Thumbnail Row -->
         <div class="row" style="padding-top: 0px; margin-top: 0px;">
         <div id="carousel" class="flexslider">
-          <ul class="slides">
+          <ul id="thumbContainer" class="slides">
+            <!--
             <li>
               <img src="img/pictures/1.jpg" />
             </li>
@@ -315,6 +317,7 @@
             <li>
                 <img src="img/pictures/34.jpg" />
             </li>
+          -->
           </ul>
         </div>
       </div>
@@ -336,6 +339,8 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- Image Viewer JS Libs -->
     <script defer src="js/jquery.flexslider.js"></script>
+    <!-- JS for loading images -->
+    <script src="js/imageGallery.js"></script>
 
     <script type="text/javascript">
       $(function(){
@@ -347,7 +352,7 @@
           controlNav: false,
           animationLoop: false,
           slideshow: false,
-          itemWidth: 210,
+          itemWidth: 80,
           itemMargin: 5,
           asNavFor: '#slider'
         });
@@ -363,6 +368,8 @@
           }
         });
       });
+
+
     </script>
 
     <!-- Optional FlexSlider Additions -->
