@@ -14,6 +14,12 @@ $.ajax({
         });
     },
     complete: function() {
+      $('<link/>', {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: './css/flexslider.css',
+        media: 'screen'
+      }).appendTo('head');
       jQuery.getScript("./js/jquery.flexslider.js", function(data, status, jqxhr) {
         $(function(){
           SyntaxHighlighter.all();
