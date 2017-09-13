@@ -15,12 +15,11 @@ $(window).on('load', function() {
 
 });
 
-
 function doesExist(url) {
-
-  var http = new XMLHttpRequest();
-  http.open('HEAD', url, false);
-  http.send();
-
-  return http.status != 404;
+ var http = jQuery.ajax({
+    type:"HEAD",
+    url: url,
+    async: true
+  })
+  return http.status == 200;
 }
