@@ -2,7 +2,7 @@ var imageCount = 1;
 
 $(window).on('load', function() {
 
-  var newImageURL = "./img/pictures/" + imageCount + ".jpg";
+  var newImageURL = "http://dggreenerside.com/img/pictures/" + imageCount + ".jpg";
   var images = "";
 
   while(doesExist(newImageURL) == true) {
