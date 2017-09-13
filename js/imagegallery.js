@@ -8,10 +8,39 @@ $.ajax({
     success: function (data) {
         $(data).find("a").attr("href", function (i, val) {
             if( val.match(/\.(jpe?g|png|gif)$/) ) {
-                $("#carousel ul").append( "<li class='flex-active-slide' style='width: 80px; margin-right: 5px; float: left; display: block;'><img draggable='false' src='"+ folder + val +"'/></li>" );
+                $("#thumbContainer").append( "<li><img src='"+ folder + val +"'/></li>" );
                 console.log(folder+val);
             }
         });
+    },
+    complete: function() {
+      jQuery.getScript("jquery.flexslider.js", function(data, status, jqxhr) {
+        $(function(){
+          SyntaxHighlighter.all();
+        });
+        $(window).load(function(){
+          $('#carousel').flexslider({
+            animation: "slide",
+            controlNav: false,
+            animationLoop: false,
+            slideshow: false,
+            itemWidth: 80,
+            itemMargin: 5,
+            asNavFor: '#slider'
+          });
+
+          $('#slider').flexslider({
+            animation: "slide",
+            controlNav: false,
+            animationLoop: false,
+            slideshow: false,
+            sync: "#carousel",
+            start: function(slider){
+              $('body').removeClass('loading');
+            }
+          });
+        });
+      });
     }
 });
 });
