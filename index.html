@@ -32,6 +32,11 @@
     <link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
     <link href="css/style.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="css/demo.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+
+    <script src="js/maps.js"></script>
+
 </head>
 
 
@@ -45,7 +50,7 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button id='navbarButton' type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -55,18 +60,18 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="about.html">About</a>
+                <ul class="nav navbar-nav navbar-right" id="menuContainer" style='cursor: pointer'>
+                    <li id="aboutOp">
+                        <a onclick="changePage('about')">About</a>
                     </li>
-                    <li>
-                        <a href="services.html">Services</a>
+                    <li id="servicesOp">
+                        <a onclick="changePage('services')">Services</a>
                     </li>
-                    <li>
-                        <a href="portfolio-item.html">Projects</a>
+                    <li id="projectsOp">
+                        <a onclick="changePage('projects')">Projects</a>
                     </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
+                    <li id="contactOp">
+                        <a onclick="changePage('contact')">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -76,186 +81,34 @@
     </nav>
 
 
+    <header id="myCarousel" ></header>
 
-
-
-<!-- BANNER -->
-<!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
-
-    <header id="myCarousel" class="carousel slide">
-
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-
-
-        <div class="carousel-inner">
-            <div class="item active">
-                <div class="fill" style="background-image:url('img/home/1.jpg');"></div>
-                <div class="carousel-caption">
-                    <h1>Free Estimates</h1>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('img/home/2.jpg');"></div>
-                <div class="carousel-caption">
-                    <h1>Competetive Pricing</h1>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('img/home/3.jpg');"></div>
-                <div class="carousel-caption">
-                    <h1>Dependable Service</h1>
-                </div>
-            </div>
-        </div>
-
-
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
-
-
-
-        <div class="main-text hidden-xs">
-            <div class="col-md-12 text-center">
-                <h1 class="first-text">DG's</h1>
-                <h3 class="second-text">Greener Side</h3>
-            </div>
-        </div>
-
-
-    </header>
-    </br></br></br>
-
-
-
-
-
-<!-- 3 PANES -->
-<!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- Page Content -->
-    <div class="container">
-
-        <!-- Marketing Icons Section -->
-        <div class="row">
-          <div class="col-md-12">
-            <h2 class="page-header">Our Business</h2>
-          </div>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-info"></i>  About Us</h4>
-                    </div>
-                    <div class="panel-body">
-                        <p>We are a local Lawncare and Landscaping company in the Westmoreland county area. We prioritize quality but at a competetive rate. Our secret is experience and hard work.</p>
-                        <a href="about" class="btn btn-default">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-wrench"></i>  Services Offered</h4>
-                    </div>
-                    <div class="panel-body">
-                        <p>We offer most Lawncare and Landscaping needs. Every cut consists of Edging, Mowing, and Clean-up of debris. We take quality to the next level, not limiting to specific weather conditions.</p>
-                        <a href="services" class="btn btn-default">More Services</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-phone"></i>  Contact Us</h4>
-                    </div>
-                    <div class="panel-body">
-                        <p>We are open during normal business hours, M-F: 8AM - 5PM. We are always looking for new customers, so email us, send a facebook message, or give us a call.</p>
-                        <a href="contact" class="btn btn-default">Call Today</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.row -->
-
-
-
-
-
-<!-- IMAGES -->
-<!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
-        <!-- Portfolio Section -->
-
-        <div class="row">
-        <div class="col-md-12">
-            <h2 class="page-header">Our Work</h2>
-        </div>
-      </div>
-        <div class="row">
-
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item">
-                    <img class="img-responsive img-portfolio img-hover" src="img/pictures/1.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item">
-                    <img class="img-responsive img-portfolio img-hover" src="img/pictures/2.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item">
-                    <img class="img-responsive img-portfolio img-hover" src="img/pictures/3.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item">
-                    <img class="img-responsive img-portfolio img-hover" src="img/pictures/4.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item">
-                    <img class="img-responsive img-portfolio img-hover" src="img/pictures/5.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item">
-                    <img class="img-responsive img-portfolio img-hover" src="img/pictures/6.jpg" alt="">
-                </a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-
-    </div>
-    <!-- /.container -->
-
-
-
-
-
+    <div id="content" class="container"></div>
 
 <!-- JAVASCRIPT -->
 <!------------------------------------------------------------------------------------------------------------------------------------------------------------------>
-    <!-- jQuery -->
     <script src="js/jquery.js"></script>
-    <!-- Bootstrap Core JavaScript -->
+    <script src="js/jquery.easing.js"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+    <script defer src="js/jquery.flexslider.js"></script>
+    <script src="js/jqBootstrapValidation.js"></script>
+
     <script src="js/bootstrap.min.js"></script>
-    <!-- Script to Activate the Carousel -->
-    <script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeTkr84D2N_oqTsoub_DDwti2GDzc22oM"></script>
+
+    <script src="js/contact_me.js"></script>
+
+    <script src="js/toggleCarousel.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/about.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/projects.js"></script>
+
+    <script src="js/globalHandlers.js"></script>
 
 </body>
-
-
 
 
 <!-- FOOTER -->
@@ -266,15 +119,15 @@
     <p class="footer-links">
       <a href="./">Home</a>
       ·
-      <a href="about.html">About</a>
+      <a onclick="changePage('about')" style='cursor:pointer' >About</a>
       ·
-      <a href="services.html">Services</a>
+      <a onclick="changePage('services')" style='cursor:pointer'>Services</a>
       ·
-      <a href="portfolio-item.html">Projects</a>
+      <a onclick="changePage('projects')" style='cursor:pointer'>Projects</a>
       ·
-      <a href="contact.html">Contact</a>
+      <a onclick="changePage('contact')" style='cursor:pointer'>Contact</a>
     </p>
-    <p class="footer-company-name">DG's Greener Side &copy; 2017</p>
+    <p class="footer-company-name">DG's Greener Side &copy; 2018</p>
   </div>
   <div class="footer-center">
     <div>
