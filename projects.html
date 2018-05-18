@@ -337,14 +337,22 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- Image Viewer JS Libs -->
 
-    <script src="js/jquery.lazy.min.js"></script>
+    <!-- <script src="js/jquery.lazy.min.js"></script> -->
 
     <script defer src="js/jquery.flexslider.js"></script>
 
     <script type="text/javascript">
-      $(function() {
-        $('.lazy').Lazy();
-      });
+      // $(function() {
+      //   $('.lazy').Lazy();
+      // });
+      window.addEventListener('load', function(){
+    var allimages= document.getElementsByTagName('img');
+    for (var i=0; i<allimages.length; i++) {
+        if (allimages[i].getAttribute('data-src')) {
+            allimages[i].setAttribute('src', allimages[i].getAttribute('data-src'));
+        }
+    }
+}, false)
       $(window).load(function(){
         $('#carousel').flexslider({
           animation: "slide",
